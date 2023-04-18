@@ -271,11 +271,13 @@ address {
 
 .tm-header-inner {
     padding: 40px 50px;
+    width: inherit;
 }
 
 @media (max-width: 991px) {
     .tm-header-inner {
         padding: 30px 15px;
+        width: inherit;
     }
 }
 
@@ -351,6 +353,7 @@ address {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    width: inherit;
 }
 
 .parallax-slider {
