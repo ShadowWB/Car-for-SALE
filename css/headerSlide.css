@@ -91,6 +91,33 @@ html {
     }
 }
 
+@media (max-width: 786px) {
+    .tm-header {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        color: white;
+        z-index: 1000;
+    }
+
+    .tm-header-inner {
+        padding: 30px 15px;
+        width: inherit;
+        height: 100%;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+        align-content: space-between;
+        margin: 0;
+        background-color: #00000091;
+    }
+
+}
+
 @media (min-width: 768px) {
     .col-md-4 {
         -ms-flex: 0 0 33.333333%;
@@ -349,11 +376,45 @@ address {
 }
 
 .tm-gallery {
+    margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: inherit;
+}
+
+.card-desc {
+    text-align: center;
+}
+
+.card-desc img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 7px;
+}
+
+.item-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.item-description {
+    display: none;
+}
+
+
+.tm-gallery-description .addres {
+    color: #626364;
+    line-height: 1.8;
+}
+
+.vs-icons {
+    display: flex;
+    /* flex-direction: column; */
 }
 
 .parallax-slider {
@@ -1095,9 +1156,23 @@ address {
 }
 
 .my-cont {
-    text-align: center;
-    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
     background-color: #319966;
+    font-size: 12px;
+}
+
+.footer-nav {
+    display: flex;
+    list-style: none;
+    width: 122px;
+    justify-content: space-between;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: white;
 }
 
 .divider {
