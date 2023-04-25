@@ -9,16 +9,13 @@
     <link rel="icon" href="img/1.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
     <link href="css/headerSlide.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
 
     <div class="container">
 
-
-
-        <!-- Top box -->
-        <!-- Logo & Site Name -->
         <div class="placeholder">
             <div class="parallax-window" data-parallax="scroll" data-image-src="img/gallery/main1.jpg">
                 <div class="tm-header">
@@ -69,9 +66,9 @@
                     <button class="filter-panel__btns-kenya">Тягачі</button>
                 </span>
                 <select class="filters-select" name="filters">
-                    <option value="all">Усі</option>
-                    <option value="sedan">Легкові</option>
-                    <option value="track">Тягачі</option>
+                    <option value="Усі">Усі</option>
+                    <option value="Легкові">Легкові</option>
+                    <option value="Тягачі">Тягачі</option>
                 </select>
             </div>
         </section>
@@ -81,6 +78,7 @@
                     <img src="img/gallery/01.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
                         <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <div class="type" style="display: none;">тягачі</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -111,7 +109,8 @@
                 <figure>
                     <img src="img/gallery/06.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
-                        <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <h4 class="tm-gallery-title">BMW A8 Combo</h4>
+                        <div class="type" style="display: none;">тягачі</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -143,6 +142,7 @@
                     <img src="img/gallery/05.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
                         <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <div class="type" style="display: none;">легкові</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -173,7 +173,8 @@
                 <figure>
                     <img src="img/gallery/04.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
-                        <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <h4 class="tm-gallery-title"> Mers A8 Combo</h4>
+                        <div class="type" style="display: none;">легкові</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -205,6 +206,7 @@
                     <img src="img/gallery/03.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
                         <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <div class="type" style="display: none;">легкові</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -236,6 +238,7 @@
                     <img src="img/gallery/02.jpg" alt="Image" class="img-fluid tm-gallery-img" />
                     <figcaption class="card-desc">
                         <h4 class="tm-gallery-title"> Audi A8 Combo</h4>
+                        <div class="type" style="display: none;">легкові</div>
                         <p class="tm-gallery-description vs-icons">
                         <div class="tm-gallery-description item-icons">
                             <span class="gas  addres">
@@ -300,13 +303,13 @@
 
         <div class="col-md-6 mar">
             <h2 class="col-12 text-center tm-section-title"> Маєте запитання до нас? </h2>
-            <form action="" method="POST" class="tm-contact-form tm-contact-form2 ">
+            <form id="telegram-form" class="tm-contact-form tm-contact-form2 ">
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Ваше ім'я" required="" />
                 </div>
 
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Ваш номер телефону"
+                    <input type="phone" name="phone" class="form-control" placeholder="Ваш номер телефону"
                         required="" />
                 </div>
 
@@ -314,6 +317,8 @@
                     <textarea rows="5" name="message" class="form-control" placeholder="Повідомленя"
                         required=""></textarea>
                 </div>
+
+                <div id="suc-alert" class="alert alert-success m-t3" role="alert" style="display: none;"> </div>
 
                 <div class="form-group tm-d-flex">
                     <button type="submit" class="tm-btn tm-btn-success tm-btn-right">
@@ -329,11 +334,14 @@
                 Знайди нас у соціальних мережах
             </p>
             <p class="socials">
-                <a href="#"><img src="img/Instagram.svg" alt="Instagram"></a>
+                <a href="https://instagram.com/vovik_ishkov?igshid=YmMyMTA2M2Y="><img src="img/Instagram.svg"
+                        alt="Instagram"></a>
                 <a href="tel:+380673832109"><img src="img/t.svg" alt="telegram"></a>
-                <a href="#"><img src="img/Telegram.svg" alt="Telegram"></a>
-                <a href="#"><img src="img/Facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="img/Whatsapp.svg" alt="Whatsapp"></a>
+                <a href="https://t.me/VovaIshkov"><img src="img/Telegram.svg" alt="Telegram"></a>
+                <a href="https://www.facebook.com/profile.php?id=100017415036082"><img src="img/Facebook.svg"
+                        alt="Facebook"></a>
+                <a href="https://wa.me/380673832109"><img src="img/Whatsapp.svg" alt="Whatsapp"></a>
+                <a href="https://tinyurl.com/embnr52s"><img src="img/viber3.svg" alt="Viber"></a>
             </p>
             <p><a href="tel:+380673832109" class="tm-contact-link">тел.+380673832109</a></p>
         </footer>
@@ -354,9 +362,81 @@
         </div>
     </div>
 
+    <div class="alert-card">
+        <div class="alert-slider">
+            <div class="close"><img src="img/close.svg" alt="close"></div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="img/gallery/03.jpg" alt="car"></div>
+                    <div class="swiper-slide"><img src="img/gallery/02.jpg" alt="car"></div>
+                    <div class="swiper-slide"><img src="img/gallery/03.jpg" alt="car"></div>
+                    <div class="swiper-slide"><img src="img/gallery/05.jpg" alt="car"></div>
+                    <div class="swiper-slide"><img src="img/gallery/06.jpg" alt="car"></div>
+                    <div class="swiper-slide"><img src="img/gallery/07.jpg" alt="car"></div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        <div class="alert-description">
+            <figcaption class="card-desc">
+                <h4 class="tm-gallery-title"> Audi A8 Combo
+                </h4>
+
+                <div class="tm-gallery-description item-icons  alert-icons">
+                    <span class="prise  addres alert-icon">
+                        <img src="img/price.svg" alt="price"> $45000
+                    </span>
+                </div>
+                <div class="tm-gallery-description item-icons  alert-icons">
+                    <span class="gas  addres alert-icon">
+                        <img src="img/gas.svg" alt="gas"> diesel
+                    </span>
+                    <span class="trans  addres alert-icon">
+                        <img src="img/year.svg" alt="trans">2012
+                    </span>
+
+                </div>
+                <div class="tm-gallery-description item-icons alert-icons">
+                    <span class="trans  addres alert-icon">
+                        <img src="img/trans.svg" alt="trans">avtomat
+                    </span>
+                    <span class="km  addres alert-icon">
+                        <img src="img/km.svg" alt="km"> 150 000
+                    </span>
+                </div>
+
+                <p class="tm-gallery-description item-description active">Nam in suscipit nisi, sit amet
+                    consectetur
+                    metus. Ut sit
+                    amet tellus accumsanNam in suscipit nisi, sit amet
+                    consectetur
+                    metus. Ut sit
+                    amet tellus accumsanNam in suscipit nisi, sit amet
+                    consectetur
+                    metus. Ut sit
+                    amet tellus accumsanNam in suscipit nisi, sit amet
+                    consectetur
+                    metus. Ut sit
+                    amet tellus accumsan</p>
+
+            </figcaption>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
     <script>
         $(document).ready(function () {
             var acc = document.getElementsByClassName("accordion");
@@ -375,6 +455,8 @@
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
